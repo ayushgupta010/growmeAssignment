@@ -1,0 +1,105 @@
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.app-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.selection-panel {
+  min-width: 250px;
+}
+
+.selection-panel h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-500 {
+  color: #6c757d;
+}
+
+/* Override PrimeReact styles for better table appearance */
+.p-datatable .p-datatable-header {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  font-weight: 600;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border: 1px solid #dee2e6;
+  padding: 0.75rem;
+}
+
+.p-datatable .p-datatable-tbody > tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background: #e9ecef;
+}
+
+/* Pagination styling */
+.p-paginator {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-top: none;
+}
+
+/* Button styling */
+.p-button.p-button-text {
+  color: #6c757d;
+}
+
+.p-button.p-button-text:hover {
+  background: #e9ecef;
+  color: #495057;
+}
+
+/* Checkbox styling */
+.p-checkbox .p-checkbox-box {
+  border: 1px solid #ced4da;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 10px;
+  }
+  
+  .card {
+    padding: 10px;
+  }
+  
+  .p-datatable .p-datatable-thead > tr > th,
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.5rem;
+  }
+} 
