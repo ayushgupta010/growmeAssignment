@@ -47,11 +47,32 @@ function App() {
 
   useEffect(() => {
     console.log('App component mounted');
-    fetchData(1);
+    
+    // Get page from URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const pageFromUrl = parseInt(urlParams.get('page') || '1');
+    
+    // Validate page number
+    const validPage = Math.max(1, pageFromUrl);
+    
+    // Update URL if page was invalid
+    if (pageFromUrl !== validPage) {
+      const newUrl = new URL(window.location.href);
+      newUrl.searchParams.set('page', validPage.toString());
+      window.history.replaceState({}, '', newUrl.toString());
+    }
+    
+    fetchData(validPage);
   }, []);
 
   const onPageChange = (event: any) => {
     const newPage = event.page + 1;
+    
+    // Update URL with new page
+    const newUrl = new URL(window.location.href);
+    newUrl.searchParams.set('page', newPage.toString());
+    window.history.pushState({}, '', newUrl.toString());
+    
     fetchData(newPage);
   };
 
